@@ -1,0 +1,85 @@
+---
+spring:
+  application:
+    name: movie-ratings-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/mydb
+    class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+  jpa:
+    hibernate:
+    ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL55Dialect
+    show-sql: true
+
+logging.level.org.hibernate.type: trace
+
+#jdbc:oracle:thin:@//localhost:1521/xe
+#    username: c##admin
+#    password: tiger
+#    class-name: oracle.jdbc.OracleDriver
+#org.hibernate.dialect.Oracle10gDialect
+#url: jdbc:sqlite:D:/tools/testDB/test.db
+#  class-name: org.sqlite.JDBC
+
+jwt:
+  secret: javainuse
+
+server:
+  port: 8082
+
+logging:
+  level:
+    root: INFO
+
+  #logging.level.org.springframework: DEBUG
+management:
+  security:
+    enabled: false
+
+
+#eureka.client.serviceUrl.defaultZone=http://localhost:8787/eureka
+
+#management.endpoints.web.exposure.include=*
+management.endpoints.web.exposure.include: heapdump,liquibase,loggers,prometheus,threaddump,info,metrics,health
+management.security.enabled: false
+
+
+#spring.main.allow-bean-definition-overriding=true
+
+#spring.message=rating-data-service
+#management.security.enabled=false
+#management.port=9004
+
+
+# java -DServer.port=8089 -jar rating-data-server.......jar
+#spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+
+#security.basic.enabled=false
+#security.user.password=password
+#server.port=8443
+# The format used for the keystore
+#server.ssl.key-store-type=PKCS12
+# The path to the keystore containing the certificate
+#server.ssl.key-store=keyStore.p12
+# The password used to generate the certificate
+#server.ssl.key-store-password=
+# Trust store that holds SSL certificates.
+#server.ssl.trust-store=trustStore.jks
+# Password used to access the trust store.
+#server.ssl.trust-store-password=123456
+# Type of the trust store.
+#server.ssl.trust-store-type=JKS
+# Whether client authentication is wanted ("want") or needed ("need").
+#server.ssl.client-auth=want
+
+#spring.security.user.name=hello
+#spring.security.user.password=password
+#security.user.password=password
+#spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+
+#spring.security.oauth2.client.registration.google.client-id=
+#spring.security.oauth2.client.registration.google.client-secret=

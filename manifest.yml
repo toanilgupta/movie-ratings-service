@@ -1,0 +1,14 @@
+---
+applications:
+- name: movie-ratings-service
+  instances: 1
+  memory: 512M
+  env:
+    JAVA_OPTS: '-XX:ReservedCodeCacheSize=32M --XX:MaxDirectMemorySize=32M'
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_thread:30}]'
+  path: target/movie-ratings-service-0.0.1.jar
+  buildpacks:
+    - https://github.com/cloudfoundry/java-buildpack.git
+  services:
+    - mydb
+

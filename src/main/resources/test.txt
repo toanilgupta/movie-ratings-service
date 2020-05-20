@@ -1,0 +1,3 @@
+This is new file
+nothing might not be meaningful here
+It is just to complete one file reading
