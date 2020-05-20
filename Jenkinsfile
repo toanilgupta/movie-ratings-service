@@ -12,7 +12,7 @@ pipeline{
         stage('Deployment Stage'){
             steps{
                 withCredentials([[$class        :  'UsernamePasswordMultiBinding',
-                             credentialsId      :  'PCF_LOGIN',
+                             credentialsId      :  'PCF_LOGIN1',
                              usernameVariable   :  'USERNAME',
                              passwordVariable   :  'PASSWORD']]){
                 bat 'cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
