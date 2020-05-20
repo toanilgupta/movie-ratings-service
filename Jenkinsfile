@@ -5,7 +5,7 @@ pipeline{
         stage('Build Stage'){
             steps{
                 withMaven(maven : 'apache-maven-3.6.1'){
-                    bat 'mvn clean package'
+                    bat 'mvn clean package -DskipTests'
                 }
             }
         }
